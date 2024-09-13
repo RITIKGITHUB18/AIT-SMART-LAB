@@ -1,0 +1,42 @@
+/* Root element styling */
+#root {
+  color: #fdb623;
+}
+
+/* Container for PDF viewer */
+.pdf-viewer-container {
+  height: 100vh; /* Full viewport height */
+  overflow: hidden; /* Hide overflow */
+  display: flex; /* Center content */
+  justify-content: center;
+  align-items: center;
+  padding: 20px; /* Padding around the container */
+  max-width: 1000px; /* Maximum width of the container */
+  border-radius: 4rem; /* Rounded corners */
+  box-shadow: 1px 1px 5px #fdb623; /* Shadow effect */
+  margin: 0 auto; /* Center the container horizontally */
+}
+
+/* Main PDF viewer wrapper */
+.pdf-viewer {
+  height: 100%; /* Full height of the container */
+  width: 100%; /* Full width of the container */
+  overflow: auto; /* Enable scrolling if needed */
+  display: flex; /* Flex layout */
+  flex-direction: column; /* Stack pages vertically */
+  align-items: center; /* Center pages horizontally */
+  border: 5px solid #fdb623; /* Border color */
+  border-radius: 2rem; /* Rounded corners */
+  background-color: #62553a; /* Background color */
+}
+
+/* PDF document styling */
+.pdf-document {
+  width: 100%; /* Full width */
+}
+
+/* PDF page styling */
+.pdf-page {
+  margin-bottom: 20px; /* Space between pages */
+  max-width: 100%; /* Ensure pages don’t overflow container width */
+}
