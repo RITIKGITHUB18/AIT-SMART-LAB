@@ -12,6 +12,9 @@ export default {
       fontFamily: {
         oswald: ["Oswald", "sans-serif"],
       },
+      boxShadow: {
+        "3xl": "1px 1px 5px #fdb623",
+      },
     },
   },
   plugins: [],

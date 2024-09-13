@@ -10,12 +10,15 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@babel/runtime": "^7.25.6",
+    "@yudiel/react-qr-scanner": "^2.0.8",
     "dotenv": "^16.4.5",
     "firebase": "^10.13.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-loader-spinner": "^6.1.6",
     "react-pdf": "^9.1.0",
+    "react-qr-scanner": "^1.0.0-alpha.11",
     "react-router-dom": "^6.26.2"
   },
   "devDependencies": {

@@ -1,42 +1,81 @@
-/* Root element styling */
 #root {
   color: #fdb623;
 }
 
-/* Container for PDF viewer */
-.pdf-viewer-container {
-  height: 100vh; /* Full viewport height */
-  overflow: hidden; /* Hide overflow */
-  display: flex; /* Center content */
+.pdf-document {
+  width: 100%;
+}
+
+.pdf-page {
+  margin-bottom: 20px;
+  max-width: 100%;
+}
+
+@media (max-width: 768px) {
+  .pdf-viewer-container {
+    max-width: 100%;
+    padding: 10px;
+  }
+
+  .pdf-viewer {
+    border-radius: 1rem;
+    padding: 5px;
+  }
+
+  .pdf-page {
+    width: 90%;
+  }
+}
+
+@media (min-width: 1000px) {
+  .pdf-page {
+    width: 100%;
+  }
+}
+
+/* src/components/QrScanner/QrScanner.css */
+.qr-scanner-container {
+  display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px; /* Padding around the container */
-  max-width: 1000px; /* Maximum width of the container */
-  border-radius: 4rem; /* Rounded corners */
-  box-shadow: 1px 1px 5px #fdb623; /* Shadow effect */
-  margin: 0 auto; /* Center the container horizontally */
+  margin: 20px auto;
+  width: 40%;
+  max-width: 80%; /* Ensure it doesn’t overflow */
 }
 
-/* Main PDF viewer wrapper */
-.pdf-viewer {
-  height: 100%; /* Full height of the container */
-  width: 100%; /* Full width of the container */
-  overflow: auto; /* Enable scrolling if needed */
-  display: flex; /* Flex layout */
-  flex-direction: column; /* Stack pages vertically */
-  align-items: center; /* Center pages horizontally */
-  border: 5px solid #fdb623; /* Border color */
-  border-radius: 2rem; /* Rounded corners */
-  background-color: #62553a; /* Background color */
+.qr-scanner-container video {
+  border: 2px solid #000;
+  border-radius: 8px;
+  max-width: 100%;
+  object-fit: cover;
 }
 
-/* PDF document styling */
-.pdf-document {
-  width: 100%; /* Full width */
+/* For mobile devices */
+@media only screen and (max-width: 768px) {
+  .qr-scanner-container {
+    width: 100%;
+    height: auto;
+  }
+
+  .qr-scanner-container video {
+    border-radius: 15px; /* Adjust border-radius for mobile */
+    max-width: 100%;
+    height: auto;
+  }
 }
 
-/* PDF page styling */
-.pdf-page {
-  margin-bottom: 20px; /* Space between pages */
-  max-width: 100%; /* Ensure pages don’t overflow container width */
+/* Add this to your existing CSS file */
+.qr-result {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.qr-result a {
+  color: #fdb623;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.qr-result a:hover {
+  text-decoration: underline;
 }
