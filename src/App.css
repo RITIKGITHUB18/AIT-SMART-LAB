@@ -1,5 +1,5 @@
 #root {
-  color: #fdb623;
+  color: #43a047;
 }
 
 .pdf-document {
@@ -44,7 +44,7 @@
 }
 
 .qr-scanner-container video {
-  border: 2px solid #000;
+  border: 2px solid #43a047;
   border-radius: 8px;
   max-width: 100%;
   object-fit: cover;
@@ -71,7 +71,7 @@
 }
 
 .qr-result a {
-  color: #fdb623;
+  color: #43a047;
   text-decoration: none;
   font-weight: bold;
 }

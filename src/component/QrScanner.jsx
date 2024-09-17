@@ -1,20 +1,40 @@
 import { Scanner } from "@yudiel/react-qr-scanner";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const QrScanner = ({ onScan, onError }) => {
   const [scannedData, setScannedData] = useState(null);
+  const videoRef = useRef(null);
   const customConstraints = {
     video: {
       facingMode: "environment",
     },
   };
 
+  useEffect(() => {
+    const videoElement = document.querySelector("video"); // Access the video element directly
+    if (videoElement) {
+      videoElement.muted = true; // Force mute the video element
+    }
+  }, []);
+
   const handleScan = (result) => {
     if (result && result.length > 0) {
       const rawValue = result[0].rawValue;
       console.log(rawValue);
       setScannedData(rawValue);
+
+      if (rawValue) {
+        window.open(rawValue, "_blank");
+      }
     }
+  };
+
+  const shortenUrlDisplay = (url) => {
+    const sliceLength = 20;
+    if (url.length > sliceLength * 2) {
+      return `${url.slice(0, sliceLength)}...${url.slice(-sliceLength)}`;
+    }
+    return url;
   };
 
   return (
@@ -27,23 +47,25 @@ const QrScanner = ({ onScan, onError }) => {
         scanDelay={500}
         styles={{
           container: {
-            width: window.innerWidth <= 768 ? "80%" : "50%",
-            height: window.innerWidth <= 768 ? "80%" : "50%", // Adjust height based on screen width
+            width: window.innerWidth <= 768 ? "90%" : "60%",
+            height: window.innerWidth <= 768 ? "90%" : "60%",
           },
           video: {
             objectFit: "cover",
-            borderColor: "#fdb623",
-            borderRadius: window.innerWidth <= 768 ? "20px" : "20px", // Adjust border-radius for mobile
+            borderColor: "#43a047",
+            borderRadius: window.innerWidth <= 768 ? "20px" : "20px",
+            muted: true,
           },
         }}
+        videoConstraints={{ muted: true }}
       />
 
       {scannedData && (
-        <div className="flex-col mt-4 items-center justify-center text-custom-ylw">
-          <p className="font-bold text-xl">Please Click: </p>
-          <div className="overflow-hidden hover:text-yellow-800">
+        <div className="flex-col mt-4 items-center justify-center text-custom-green">
+          <p className="font-bold text-2xl">Please Click: </p>
+          <div className="overflow-hidden hover:text-[#66BB6A] text-xl">
             <a href={scannedData} target="_blank" rel="noopener noreferrer">
-              {scannedData}
+              {shortenUrlDisplay(scannedData)}
             </a>
           </div>
         </div>

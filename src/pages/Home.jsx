@@ -13,7 +13,7 @@ const Home = () => {
 
   return (
     <div className="flex flex-col items-center justify-center">
-      <h1 className="font-bold text-2xl text-custom-ylw">SCAN YOU QR</h1>
+      <h1 className="font-bold text-2xl text-custom-green">SCAN YOU QR</h1>
       <QrScanner onScan={handleScan} onError={handleError} />
     </div>
   );

@@ -5,15 +5,15 @@ export default {
     extend: {
       colors: {
         // "custom-bg": "#28282B",
-        "custom-bg": "#333333",
+        "custom-bg": "#FFF3E0",
         "custom-blue": "#1D4ED8",
-        "custom-ylw": "#FDB623",
+        "custom-green": "#43A047",
       },
       fontFamily: {
         oswald: ["Oswald", "sans-serif"],
       },
       boxShadow: {
-        "3xl": "1px 1px 5px #fdb623",
+        "3xl": "1px 1px 5px #43A047",
       },
     },
   },

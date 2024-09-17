@@ -12,7 +12,15 @@ export default function App() {
         <Routes>
           {/* <Route path="/" element={<Pdf_Viewer />} /> */}
           <Route path="" element={<Home />} />
-          <Route path="/pdf/:qrId" element={<Pdf_Viewer />} />
+          {/* <Route path="/pdf/:qrId" element={<Pdf_Viewer />} /> */}
+          <Route
+            path="/smartlabsusers/:userid/independent_qr_code/:docId"
+            element={<Pdf_Viewer />}
+          />
+          <Route
+            path="/smartlabsusers/:userid/folders/:folderName/independent_qr_code/:docId"
+            element={<Pdf_Viewer />}
+          />
         </Routes>
       </main>
     </div>
