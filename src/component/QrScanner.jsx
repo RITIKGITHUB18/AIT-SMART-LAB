@@ -61,9 +61,9 @@ const QrScanner = ({ onScan, onError }) => {
       />
 
       {scannedData && (
-        <div className="flex-col mt-4 items-center justify-center text-custom-green">
+        <div className="flex-col mt-4 items-center justify-center text-#EE764D">
           <p className="font-bold text-2xl">Please Click: </p>
-          <div className="overflow-hidden hover:text-[#66BB6A] text-xl">
+          <div className="overflow-hidden hover:text-[#EE764D] text-xl">
             <a href={scannedData} target="_blank" rel="noopener noreferrer">
               {shortenUrlDisplay(scannedData)}
             </a>

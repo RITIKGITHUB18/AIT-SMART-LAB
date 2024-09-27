@@ -40,14 +40,16 @@
   align-items: center;
   margin: 20px auto;
   width: 40%;
-  max-width: 80%; /* Ensure it doesn’t overflow */
+  max-width: 80%;
+  height: auto; /* Ensure it doesn’t overflow */
 }
 
 .qr-scanner-container video {
-  border: 2px solid #43a047;
+  /* border: 2px solid #43a047; */
   border-radius: 8px;
   max-width: 100%;
   object-fit: cover;
+  height: 100px;
 }
 
 /* For mobile devices */
